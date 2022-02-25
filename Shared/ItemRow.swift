@@ -20,6 +20,10 @@ struct ItemRow: View {
             .aspectRatio(contentMode: .fit)
             .frame(width:100, height: 100)
         }
+        Image(systemName: item.systemName)
+          .resizable()
+          .aspectRatio(contentMode: .fit)
+          .frame(width:100, height: 100)
       }
       Text(item.label)
       Spacer()

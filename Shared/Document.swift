@@ -39,15 +39,16 @@ class Document: ObservableObject {
     ]
   }
   
-  func addItem(urlStr:String, label:String, assetName:String) {
-    items.append(ItemModel(urlStr:urlStr, label:label, assetName: assetName))
+  func addItem(urlStr:String, label:String, assetName:String, systemName: String) {
+    items.append(ItemModel(urlStr:urlStr, label:label, assetName: assetName, systemName: systemName))
   }
   
-  func updateItem(id: UUID, urlStr:String, label:String, assetName:String) {
+  func updateItem(id: UUID, urlStr:String, label:String, assetName:String, systemName: String) {
     if let index = findIndex(id) {
       items[index].urlStr = urlStr
       items[index].label = label
       items[index].assetName = assetName
+      items[index].assetName = systemName
     }
   }
 

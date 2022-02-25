@@ -19,6 +19,9 @@ struct ItemDetail: View {
             .resizable()
             .aspectRatio(contentMode: .fit)
         }
+        Image(systemName: item.systemName)
+          .resizable()
+          .aspectRatio(contentMode: .fit)
       }
       HStack {
         Text("url: ")
@@ -33,6 +36,11 @@ struct ItemDetail: View {
       HStack {
         Text("assetName: ")
         Text(item.assetName)
+        Spacer()
+      }
+      HStack {
+        Text("systemName: ")
+        Text(item.systemName)
         Spacer()
       }
       Button("Delete") {

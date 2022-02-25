@@ -9,5 +9,6 @@ struct ItemModel : Identifiable {
   var urlStr:String = ""
   var label:String = ""
   var assetName:String = ""
+  var systemName:String = ""
 }
 

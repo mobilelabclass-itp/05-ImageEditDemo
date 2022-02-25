@@ -9,6 +9,7 @@ struct AddImageView: View {
   @State var urlstr:String = ""
   @State var label:String = ""
   @State var assetName:String = ""
+  @State var systemName:String = ""
   @Environment(\.dismiss) var dismiss
   @EnvironmentObject var document:Document
   var body: some View {
@@ -16,7 +17,8 @@ struct AddImageView: View {
       HStack {
         Button("Add") {
           print("AddImageView Add")
-          document.addItem(urlStr: urlstr, label: label, assetName: assetName)
+          document.addItem(urlStr: urlstr, label: label,
+                           assetName: assetName, systemName: systemName)
           dismiss()
         }
         Spacer()
@@ -34,6 +36,9 @@ struct AddImageView: View {
           .textInputAutocapitalization(.never)
           .disableAutocorrection(true)
         TextField("assetName", text: $assetName)
+          .textInputAutocapitalization(.never)
+          .disableAutocorrection(true)
+        TextField("systemName", text: $systemName)
           .textInputAutocapitalization(.never)
           .disableAutocorrection(true)
       }
