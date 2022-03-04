@@ -14,7 +14,8 @@ struct ContentView: View {
         ForEach(document.items.reversed()) { item in
           NavigationLink(
             destination:
-              ItemDetail(item: item)
+              // ItemDetail(item: item)
+            UpdateImageView(item: item)
           )
           {
             ItemRow(item: item)

@@ -48,7 +48,7 @@ class Document: ObservableObject {
       items[index].urlStr = urlStr
       items[index].label = label
       items[index].assetName = assetName
-      items[index].assetName = systemName
+      items[index].systemName = systemName
     }
   }
 

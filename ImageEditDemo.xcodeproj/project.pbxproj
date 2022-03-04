@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AB2C747227C927B300E2BEBC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AB2C747127C927B300E2BEBC /* README.md */; };
+		AB2E8AB827D1AB0B0046C895 /* UpdateImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2E8AB727D1AB0B0046C895 /* UpdateImageView.swift */; };
+		AB2E8AB927D1AB0B0046C895 /* UpdateImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2E8AB727D1AB0B0046C895 /* UpdateImageView.swift */; };
 		AB5F2E7D27C863C800DA0D75 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5F2E7C27C863C800DA0D75 /* ItemModel.swift */; };
 		AB5F2E7E27C863C800DA0D75 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5F2E7C27C863C800DA0D75 /* ItemModel.swift */; };
 		AB5F2E8027C8652D00DA0D75 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5F2E7F27C8652D00DA0D75 /* Document.swift */; };
@@ -30,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		AB2C747127C927B300E2BEBC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		AB2E8AB727D1AB0B0046C895 /* UpdateImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateImageView.swift; sourceTree = "<group>"; };
 		AB5F2E7C27C863C800DA0D75 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		AB5F2E7F27C8652D00DA0D75 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		AB5F2E8227C866B800DA0D75 /* image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = image.swift; sourceTree = "<group>"; };
@@ -83,6 +86,7 @@
 				AB5F2E7F27C8652D00DA0D75 /* Document.swift */,
 				AB5F2E8227C866B800DA0D75 /* image.swift */,
 				AB5F2E8B27C873A700DA0D75 /* AddImageView.swift */,
+				AB2E8AB727D1AB0B0046C895 /* UpdateImageView.swift */,
 				AB5F769A27C85DCD00BA99C8 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -207,6 +211,7 @@
 				AB5F2E8927C8695400DA0D75 /* ItemDetail.swift in Sources */,
 				AB5F76AA27C85DCD00BA99C8 /* ContentView.swift in Sources */,
 				AB5F2E7D27C863C800DA0D75 /* ItemModel.swift in Sources */,
+				AB2E8AB827D1AB0B0046C895 /* UpdateImageView.swift in Sources */,
 				AB5F76A827C85DCD00BA99C8 /* ImageDemoApp.swift in Sources */,
 				AB5F2E8C27C873A700DA0D75 /* AddImageView.swift in Sources */,
 				AB5F2E8627C8692700DA0D75 /* ItemRow.swift in Sources */,
@@ -222,6 +227,7 @@
 				AB5F2E8A27C8695400DA0D75 /* ItemDetail.swift in Sources */,
 				AB5F76AB27C85DCD00BA99C8 /* ContentView.swift in Sources */,
 				AB5F2E7E27C863C800DA0D75 /* ItemModel.swift in Sources */,
+				AB2E8AB927D1AB0B0046C895 /* UpdateImageView.swift in Sources */,
 				AB5F76A927C85DCD00BA99C8 /* ImageDemoApp.swift in Sources */,
 				AB5F2E8D27C873A700DA0D75 /* AddImageView.swift in Sources */,
 				AB5F2E8727C8692700DA0D75 /* ItemRow.swift in Sources */,
