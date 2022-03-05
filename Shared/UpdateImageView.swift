@@ -9,27 +9,43 @@ import SwiftUI
 
 struct UpdateImageView: View {
   var item:ItemModel
+  
   @State var urlStr:String = ""
   @State var label:String = ""
   @State var assetName:String = ""
   @State var systemName:String = ""
+  
   @Environment(\.dismiss) var dismiss
   @EnvironmentObject var document:Document
+  
   var body: some View {
     VStack {
       ZStack {
-        Image(item.assetName)
+        Image(assetName)
           .resizable()
           .aspectRatio(contentMode: .fit)
-        if let uiImage = imageFor(string: item.urlStr) {
+        if let uiImage = imageFor(string: urlStr) {
           Image(uiImage: uiImage)
             .resizable()
             .aspectRatio(contentMode: .fit)
         }
-        Image(systemName: item.systemName)
+        Image(systemName: systemName)
           .resizable()
           .aspectRatio(contentMode: .fit)
       }
+      HStack {
+        Button("Update") {
+          print("UpdateImageView Update")
+          document.updateItem(id: item.id, urlStr: urlStr, label: label,
+                              assetName: assetName, systemName: systemName)
+          dismiss()
+        }
+        Spacer()
+        Button("Delete") {
+          document.deleteItem(id: item.id)
+          dismiss();
+        }
+      }.padding(10)
       Form {
         TextField("url", text: $urlStr)
           .textInputAutocapitalization(.never)
@@ -43,21 +59,6 @@ struct UpdateImageView: View {
         TextField("systemName", text: $systemName)
           .textInputAutocapitalization(.never)
           .disableAutocorrection(true)
-        HStack {
-          Button("Update") {
-            print("UpdateImageView Update")
-            document.updateItem(id: item.id, urlStr: urlStr, label: label,
-                                assetName: assetName, systemName: systemName)
-            dismiss()
-          }
-          Spacer()
-          Button("Cancel") {
-            print("AddImageView Cancel")
-            dismiss()
-          }
-          Spacer()
-        }.padding()
-
       }
     }
   }

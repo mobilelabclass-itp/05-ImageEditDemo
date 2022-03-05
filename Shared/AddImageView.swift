@@ -6,7 +6,7 @@ import SwiftUI
 import PhotosUI
 
 struct AddImageView: View {
-  @State var urlstr:String = ""
+  @State var urlStr:String = ""
   @State var label:String = ""
   @State var assetName:String = ""
   @State var systemName:String = ""
@@ -14,10 +14,23 @@ struct AddImageView: View {
   @EnvironmentObject var document:Document
   var body: some View {
     VStack {
+      ZStack {
+        Image(assetName)
+          .resizable()
+          .aspectRatio(contentMode: .fit)
+        if let uiImage = imageFor(string: urlStr) {
+          Image(uiImage: uiImage)
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+        }
+        Image(systemName: systemName)
+          .resizable()
+          .aspectRatio(contentMode: .fit)
+      }
       HStack {
         Button("Add") {
           print("AddImageView Add")
-          document.addItem(urlStr: urlstr, label: label,
+          document.addItem(urlStr: urlStr, label: label,
                            assetName: assetName, systemName: systemName)
           dismiss()
         }
@@ -26,10 +39,9 @@ struct AddImageView: View {
           print("AddImageView Cancel")
           dismiss()
         }
-        Spacer()
-      }.padding()
+      }.padding(10)
       Form {
-        TextField("url", text: $urlstr)
+        TextField("url", text: $urlStr)
           .textInputAutocapitalization(.never)
           .disableAutocorrection(true)
         TextField("label", text: $label)
