@@ -30,20 +30,6 @@ struct UpdateImageView: View {
           .resizable()
           .aspectRatio(contentMode: .fit)
       }
-      HStack {
-        Button("Update") {
-          print("UpdateImageView Update")
-          document.updateItem(id: item.id, urlStr: urlStr, label: label,
-                           assetName: assetName, systemName: systemName)
-          dismiss()
-        }
-        Spacer()
-        Button("Cancel") {
-          print("AddImageView Cancel")
-          dismiss()
-        }
-        Spacer()
-      }.padding()
       Form {
         TextField("url", text: $urlStr)
           .textInputAutocapitalization(.never)
@@ -57,14 +43,22 @@ struct UpdateImageView: View {
         TextField("systemName", text: $systemName)
           .textInputAutocapitalization(.never)
           .disableAutocorrection(true)
+        HStack {
+          Button("Update") {
+            print("UpdateImageView Update")
+            document.updateItem(id: item.id, urlStr: urlStr, label: label,
+                                assetName: assetName, systemName: systemName)
+            dismiss()
+          }
+          Spacer()
+          Button("Cancel") {
+            print("AddImageView Cancel")
+            dismiss()
+          }
+          Spacer()
+        }.padding()
+
       }
-    }
-    .onAppear {
-      print("UpdateImageView appear")
-      urlStr = item.urlStr
-      label = item.label
-      assetName = item.assetName
-      systemName = item.systemName
     }
   }
 }
