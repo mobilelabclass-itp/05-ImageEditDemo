@@ -9,7 +9,7 @@ import SwiftUI
 
 struct UpdateImageView: View {
   var item:ItemModel
-  @State var urlstr:String = ""
+  @State var urlStr:String = ""
   @State var label:String = ""
   @State var assetName:String = ""
   @State var systemName:String = ""
@@ -33,7 +33,7 @@ struct UpdateImageView: View {
       HStack {
         Button("Update") {
           print("UpdateImageView Update")
-          document.updateItem(id: item.id, urlStr: urlstr, label: label,
+          document.updateItem(id: item.id, urlStr: urlStr, label: label,
                            assetName: assetName, systemName: systemName)
           dismiss()
         }
@@ -45,7 +45,7 @@ struct UpdateImageView: View {
         Spacer()
       }.padding()
       Form {
-        TextField("url", text: $urlstr)
+        TextField("url", text: $urlStr)
           .textInputAutocapitalization(.never)
           .disableAutocorrection(true)
         TextField("label", text: $label)
@@ -61,7 +61,7 @@ struct UpdateImageView: View {
     }
     .onAppear {
       print("UpdateImageView appear")
-      urlstr = item.urlStr
+      urlStr = item.urlStr
       label = item.label
       assetName = item.assetName
       systemName = item.systemName
