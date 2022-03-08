@@ -39,8 +39,14 @@ class Document: ObservableObject {
     ]
   }
   
-  func addItem(urlStr:String, label:String, assetName:String, systemName: String) {
-    items.append(ItemModel(urlStr:urlStr, label:label, assetName: assetName, systemName: systemName))
+  func addItem(urlStr:String, label:String, assetName:String, systemName: String) -> ItemModel {
+    let item = ItemModel(urlStr:urlStr, label:label, assetName: assetName, systemName: systemName)
+    items.append(item)
+    return item
+  }
+  
+  func newItem() -> ItemModel {
+    return addItem(urlStr: "", label: "", assetName: "", systemName: "")
   }
   
   func updateItem(id: UUID, urlStr:String, label:String, assetName:String, systemName: String) {

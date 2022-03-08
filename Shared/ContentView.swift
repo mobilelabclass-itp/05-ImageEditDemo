@@ -16,7 +16,8 @@ struct ContentView: View {
             destination:
             // ItemDetail(item: item)
             // UpdateImageView(item: item)
-            UpdateImageView(item: item,
+            UpdateImageView(action: "Update",
+                            id: item.id,
                             urlStr: item.urlStr,
                             label: item.label,
                             assetName: item.assetName,

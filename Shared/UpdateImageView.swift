@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct UpdateImageView: View {
-  var item:ItemModel
-  
+  var action: String // "Update" or "Add"
+//  var item:ItemModel
+  var id: UUID
   @State var urlStr:String = ""
   @State var label:String = ""
   @State var assetName:String = ""
   @State var systemName:String = ""
-  
+
   @Environment(\.dismiss) var dismiss
   @EnvironmentObject var document:Document
   
@@ -36,13 +37,13 @@ struct UpdateImageView: View {
       HStack {
         Button("Update") {
           print("UpdateImageView Update")
-          document.updateItem(id: item.id, urlStr: urlStr, label: label,
+          document.updateItem(id: id, urlStr: urlStr, label: label,
                               assetName: assetName, systemName: systemName)
           dismiss()
         }
         Spacer()
         Button("Delete") {
-          document.deleteItem(id: item.id)
+          document.deleteItem(id: id)
           dismiss();
         }
       }.padding(10)
